@@ -2,6 +2,10 @@
 
 Driver's License Barcode Decoder
 
+## Demo website
+
+https://licensedecoder.onrender.com/
+
 ## Introduction
 
 This project utilizes React-webcam to access a user's webcam and implements Zxing to decode the PDF417 barcode located on the back of their driver's license.
