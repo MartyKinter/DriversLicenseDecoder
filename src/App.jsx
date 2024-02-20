@@ -124,7 +124,9 @@ const BarcodeScanner = () => {
         <Results result={result} error={error} />
       </div>
       <footer>
-        <a>View code on GitHub</a>
+        <a href="https://github.com/MartyKinter/DriversLicenseDecoder">
+          View code on GitHub
+        </a>
       </footer>
     </div>
   );
