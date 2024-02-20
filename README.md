@@ -5,6 +5,7 @@ Driver's License Barcode Decoder
 ## Demo website
 
 ![demo gif](/Drivers-license-decoder.gif)
+(for safety concerns this is not my real address)
 
 https://licensedecoder.onrender.com/
 
