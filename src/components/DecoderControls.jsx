@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 
 export default function DecoderControls({
@@ -22,8 +22,8 @@ export default function DecoderControls({
 
   const videoConstraints = isMobile
     ? {
-        width: { min: 750 },
-        height: { min: 150 },
+        width: { min: 150 },
+        height: { min: 750 },
         facingMode: "environment", // Use the back camera
       }
     : {
