@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 
 export default function DecoderControls({
@@ -12,6 +13,24 @@ export default function DecoderControls({
   switchSource,
   handleFileChange,
 }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    setIsMobile(/iphone|ipad|ipod|android/.test(userAgent));
+  }, []);
+
+  const videoConstraints = isMobile
+    ? {
+        width: { min: 750 },
+        height: { min: 150 },
+        facingMode: "environment", // Use the back camera
+      }
+    : {
+        width: 750,
+        height: 150,
+      };
+
   return (
     <>
       {imageSrc ? (
@@ -35,10 +54,7 @@ export default function DecoderControls({
                   ref={webcamRef}
                   forceScreenshotSourceSize
                   screenshotFormat="image/jpeg"
-                  videoConstraints={{
-                    height: 150,
-                    width: 750,
-                  }}
+                  videoConstraints={videoConstraints}
                 />
                 <p>(Please place barcode as close to the camera as possible)</p>
               </>
